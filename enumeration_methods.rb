@@ -13,6 +13,28 @@ module Enumerable
 		  i+=1
 		end
 	end
+	def my_select
+		i = 0
+		result = []
+		while(i < self.length) do
+		  if yield(self[i]) == true
+		  	result.push(self[i])
+		  end
+		  i += 1 
+		end
+		return result
+	end
+	def my_all?
+		i = 0
+		any = true
+		while(i < self.length) do
+			if yield(self[i]) == false
+				any = false
+				end
+			i += 1
+		end
+		return any
+	end
 	def my_any?
 		i = 0
 		any = false
