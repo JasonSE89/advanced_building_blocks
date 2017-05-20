@@ -13,4 +13,17 @@ module Enumerable
 		  i+=1
 		end
 	end
+	def my_any?
+		i = 0
+		any = true
+		while(i < self.length) do
+			yield(
+				if self[i] == false || self[i] == nil
+					any = false
+				end
+				 )
+			i += 1
+		end
+		return any
+	end
 end
