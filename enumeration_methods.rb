@@ -46,4 +46,21 @@ module Enumerable
 		end
 		return any
 	end
+	def my_none?
+		i = 0
+		result = []
+		while(i < self.length) do
+			if yield(self[i]) == true
+				result.push(true)
+			else
+				result.push(false)
+			end
+			i += 1
+		end
+		if result.include? == true
+		  return false
+		else
+		  return true
+		end
+     end
 end
